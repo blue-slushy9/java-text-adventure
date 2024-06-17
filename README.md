@@ -1,1 +1,1 @@
-# java-text-adventure
+This is just a little text-based adventure game I am making to familiarize myself with Java.
