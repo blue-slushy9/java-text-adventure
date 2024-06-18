@@ -1,6 +1,18 @@
 // Import the Scanner class, which is used for taking user input
 import java.util.Scanner;
 
+// Define class for confirming user input
+public class Confirm {
+    // Create the strings we'll use
+    private String isCorrect;
+    private String okay;
+
+    // Constructor
+    public Confirm(String isCorrect, String okay) {
+        this.isCorrect = isCorrect;
+        this.okay = okay;
+    }
+}
 
 // Contains methods and attributes pertaining to character traits
 public class CreateCharacter {
