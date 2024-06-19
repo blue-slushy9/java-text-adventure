@@ -3,8 +3,19 @@ import java.util.Scanner;
 
 // Create class for confirming user input
 public class Confirm {
-    public static boolean(String message) {
-        
+    public static boolean getConfirmation(String message) {
+        // Create new Scanner object // 'System.in' 
+        Scanner scanner = new Scanner(System.in);
+	// This string that will store the user's answer
+	String answer;
+        // Print your message that prompts the user
+	System.out.print(message + "[Y/n] ");
+	// Read user input and assign to variable // trim() excises extraneous input text
+	answer = scanner.nextLine().trim()
+	// Verify whether 'y' or 'n' was entered
+	if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n")) {
+	    
+	}
     }
 	    
 }
