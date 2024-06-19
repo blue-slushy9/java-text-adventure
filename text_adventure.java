@@ -41,8 +41,10 @@ public class CreateCharacter {
         System.out.print("Please enter your character's name: ");
         // 'nextLine()' 
         String name = scanner.nextLine();
+	// Define boolean method for confirming user input
+	public static boolean 
 	// Call constructor for Confirm class
-	Confirm confirmName = new Confirm("You have entered "+name+", is this correct? [Y/n]", "Okay, your character's name is "+name+".");
+	//Confirm confirmName = new Confirm("You have entered "+name+", is this correct? [Y/n]", "Okay, your character's name is "+name+".");
 	//
                 }
         
