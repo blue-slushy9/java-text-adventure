@@ -3,17 +3,33 @@ import java.util.Scanner;
 
 // Create class for confirming user input
 public class Confirm {
-    public static boolean getConfirmation(String message) {
+    // We will use two strings for confirming user input
+    private String isCorrect;
+    private String okay;
+    
+    // Define constructor
+    public Confirm(String isCorrect, String okay) {
+        // Using 'this' ensures the variables/fields will be specific to the object instance
+	this.isCorrect = isCorrect;
+	this.okay = okay;
+    }
+	
+    // Define method
+    public static boolean getConfirmation(String isCorrect, String okay) {
         // Create new Scanner object // 'System.in' 
         Scanner scanner = new Scanner(System.in);
 	// This string that will store the user's answer
 	String answer;
         // Print your message that prompts the user
-	System.out.print(message + "[Y/n] ");
+	System.out.println(isCorrect + "[Y/n]");
 	// Read user input and assign to variable // trim() excises extraneous input text
 	answer = scanner.nextLine().trim()
-	// Verify whether 'y' or 'n' was entered
-	if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n")) {
+	// If user entered 'Y' or 'y'...
+	if (answer.equalsIgnoreCase("y")) {
+	    // ...print the confirmation of the input
+	    System.out.println(okay);
+	} // Else, if the user entered 'N' or 'n'...
+	else if (answer.equalsIgnoreCase("n")) {
 	    
 	}
     }
