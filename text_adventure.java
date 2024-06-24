@@ -19,18 +19,19 @@ public class Confirm {
         // Create new Scanner object // 'System.in' 
         Scanner scanner = new Scanner(System.in);
 	// This string that will store the user's answer
-	String answer;
+	String yesOrNo;
         // Print your message that prompts the user
 	System.out.println(isCorrect + "[Y/n]");
 	// Read user input and assign to variable // trim() excises extraneous input text
-	answer = scanner.nextLine().trim()
+	yesOrNo = scanner.nextLine().trim();
 	// If user entered 'Y' or 'y'...
 	if (answer.equalsIgnoreCase("y")) {
 	    // ...print the confirmation of the input
 	    System.out.println(okay);
 	} // Else, if the user entered 'N' or 'n'...
 	else if (answer.equalsIgnoreCase("n")) {
-	    
+	    // Call function recursively until user enters correct string
+	    getConfirmation(String isCorrect, String okay);
 	}
     }
 	    
