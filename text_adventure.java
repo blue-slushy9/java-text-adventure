@@ -39,11 +39,14 @@ public class Confirm {
 
 // Contains methods and attributes pertaining to character traits
 public class CreateCharacter {
+    // Define string that will be assigned to 'isCorrect'
+    String isCorrect = "You have entered "+name+" for your character's name, is this correct? [Y/n]";
+    String okay = "Okay, your character's name will be "+name+".";
     // Define method that creates Scanner object
-    public void() {
+    //public void() {
     // 'System.in' 
-    Scanner scanner = new Scanner(System.in);
-    }
+    //Scanner scanner = new Scanner(System.in);
+    //}
     
     // Method for receiving character name from user
     public String getName() {
@@ -51,6 +54,7 @@ public class CreateCharacter {
         System.out.print("Please enter your character's name: ");
         // 'nextLine()' 
         String name = scanner.nextLine();
+	
 	
 	// Call constructor for Confirm class
 	//Confirm confirmName = new Confirm("You have entered "+name+", is this correct? [Y/n]", "Okay, your character's name is "+name+".");
