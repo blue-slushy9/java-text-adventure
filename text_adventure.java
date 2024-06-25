@@ -64,17 +64,24 @@ public class CreateCharacter {
     
     // Method for receiving character name from user
     public String getName() {
-        // Unlike 'println', 'print' leaves cursor on same line
         String name = new InputAndConfirm.getInput(enterName);
         // Confirm user input for character name
 	new getConfirmation(correctName, yourName);
         return name
     }
+    // Method for receiving character race from user
+    public String getRace() {
+        //
+	String race = new InputAndConfirm
+    }
 }
 
 // Define main class
 public static void main(String[] args) {
-
+// Get and confirm character name
+String charName = new createCharacter.getName();
+// This field is still in progress
+String charRace = new createCharacter.getRace();
 }
 
 
