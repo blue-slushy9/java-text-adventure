@@ -18,25 +18,35 @@ public class InputAndConfirm {
 	this.isCorrect = isCorrect;
 	this.okay = okay;
     }
-	
-    // Define method
-    public static boolean getInputAndConfirm(String isCorrect, String okay) {
+
+    // Define method for getting user input
+    public static String getInput(String pleaseEnter) {
+	// Create new Scanner object // 'System.in'
+        Scanner scanner = new Scanner(System.in);
+	// This string will store the user input, which we receive with scanner
+	String input = scanner.nextLine();
+	return input;
+    }
+
+    // Define method for confirming user input
+    public static boolean getConfirmation(String isCorrect, String okay) {
         // Create new Scanner object // 'System.in' 
         Scanner scanner = new Scanner(System.in);
 	// This string that will store the user's answer
 	String yesOrNo;
         // Print your message that prompts the user
-	System.out.println(isCorrect + "[Y/n] ");
+	System.out.println(isCorrect + " [Y/n] ");
 	// Read user input and assign to variable // trim() excises extraneous input text
 	yesOrNo = scanner.nextLine().trim();
 	// If user entered 'Y' or 'y'...
-	if (answer.equalsIgnoreCase("y")) {
+	if (yesOrNo.equalsIgnoreCase("y")) {
 	    // ...print the confirmation of the input
 	    System.out.println(okay);
+	    
 	} // Else, if the user entered 'N' or 'n'...
-	else if (answer.equalsIgnoreCase("n")) {
+	else if (yesOrNo.equalsIgnoreCase("n")) {
 	    // Call function recursively until user enters correct string
-	    getConfirmation(pleaseEnter, isCorrect, okay);
+	    getConfirmation(isCorrect, okay);
 	}
     }
 	    
@@ -46,7 +56,7 @@ public class InputAndConfirm {
 public class CreateCharacter {
     // Define our three strings for this class
     String pleaseEnter = "Please enter your character's name: ";
-    String isCorrect = "You have entered "+name+" for your character's name, is this correct? [Y/n]";
+    String isCorrect = "You have entered "+name+" for your character's name, is this correct?";
     String okay = "Okay, your character's name will be "+name+".";
     // Define method that creates Scanner object
     //public void() {
@@ -57,9 +67,9 @@ public class CreateCharacter {
     // Method for receiving character name from user
     public String getName() {
         // Unlike 'println', 'print' leaves cursor on same line
-        
-        // 'nextLine()' 
-        String name = scanner.nextLine();
+        String name = new InputAndConfirm.getInput();
+        // Confirm user input for character name
+	new getConfirmation();
 	
 	
 	// Call constructor for Confirm class
