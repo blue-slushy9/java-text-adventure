@@ -55,27 +55,16 @@ public class InputAndConfirm {
 // Contains methods and attributes pertaining to character traits
 public class CreateCharacter {
     // Define our three strings for this class
-    String pleaseEnter = "Please enter your character's name: ";
-    String isCorrect = "You have entered "+name+" for your character's name, is this correct?";
-    String okay = "Okay, your character's name will be "+name+".";
-    // Define method that creates Scanner object
-    //public void() {
-    // 'System.in' 
-    //Scanner scanner = new Scanner(System.in);
-    //}
+    String enterName = "Please enter your character's name: ";
+    String correctName = "You have entered "+name+" for your character's name, is this correct?";
+    String yourName = "Okay, your character's name will be "+name+".";
     
     // Method for receiving character name from user
     public String getName() {
         // Unlike 'println', 'print' leaves cursor on same line
-        String name = new InputAndConfirm.getInput();
+        String name = new InputAndConfirm.getInput(enterName);
         // Confirm user input for character name
-	new getConfirmation();
-	
-	
-	// Call constructor for Confirm class
-	//Confirm confirmName = new Confirm("You have entered "+name+", is this correct? [Y/n]", "Okay, your character's name is "+name+".");
-	//
-                }
+	new getConfirmation(correctName, yourName);
         
     }
 }
