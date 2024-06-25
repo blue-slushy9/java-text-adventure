@@ -43,14 +43,13 @@ public class InputAndConfirm {
 	    // ...print the confirmation of the input
 	    System.out.println(okay);
 	    return
-	} // Else, if the user entered 'N' or 'n'...
-	else if (yesOrNo.equalsIgnoreCase("n")) {
+	// Else, if the user entered 'N' or 'n'...
+	} else if (yesOrNo.equalsIgnoreCase("n")) {
 	    // Call function recursively until user enters correct string
 	    getConfirmation(isCorrect, okay);
-	else {
+	} else {
 	    System.out.println("Sorry, that input isn't valid. Please try again.");
 	    getConfirmation(isCorrect, okay);
-	}
 	}
     }
 	    
