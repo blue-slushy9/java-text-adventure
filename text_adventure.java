@@ -33,11 +33,11 @@ public class InputAndConfirm {
         // Create new Scanner object // 'System.in' 
         Scanner scanner = new Scanner(System.in);
 	// This string that will store the user's answer
-	String yesOrNo;
+	//String yesOrNo;
         // Print your message that prompts the user
 	System.out.println(isCorrect + " [Y/n] ");
 	// Read user input and assign to variable // trim() excises extraneous input text
-	yesOrNo = scanner.nextLine().trim();
+	String yesOrNo = scanner.nextLine().trim();
 	// If user entered 'Y' or 'y'...
 	if (yesOrNo.equalsIgnoreCase("y")) {
 	    // ...print the confirmation of the input
