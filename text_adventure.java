@@ -42,10 +42,15 @@ public class InputAndConfirm {
 	if (yesOrNo.equalsIgnoreCase("y")) {
 	    // ...print the confirmation of the input
 	    System.out.println(okay);
+	    return
 	} // Else, if the user entered 'N' or 'n'...
 	else if (yesOrNo.equalsIgnoreCase("n")) {
 	    // Call function recursively until user enters correct string
 	    getConfirmation(isCorrect, okay);
+	else {
+	    System.out.println("Sorry, that input isn't valid. Please try again.");
+	    getConfirmation(isCorrect, okay);
+	}
 	}
     }
 	    
@@ -64,7 +69,7 @@ public class CreateCharacter {
         String name = new InputAndConfirm.getInput(enterName);
         // Confirm user input for character name
 	new getConfirmation(correctName, yourName);
-        
+        return name
     }
 }
 
