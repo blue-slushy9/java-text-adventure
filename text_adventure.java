@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 // Create class for confirming user input
 public class InputAndConfirm {
+    
     // We will use three strings for confirming user input
     // "Please enter blah blah"
     private String pleaseEnter;
@@ -57,6 +58,7 @@ public class InputAndConfirm {
 
 // Contains methods and attributes pertaining to character traits
 public class CreateCharacter {
+	
     // Method for receiving character name from user
     public String getName() {
 	// Define our three strings for this method
@@ -69,21 +71,27 @@ public class CreateCharacter {
 	new getConfirmation(correctName, yourName);
         return name
     }
+
     // Method for receiving character race from user
     public String getRace() {
         String enterRace = "Please enter your character's race: ";
 	String correctName = "You have entered "+race+" for your character's race, is this correct?";
 	String yourName = "Okay, your character's race will be "+race+".";
-	String race = new InputAndConfirm
+	// Create instance of InputAndConfirm class, call getInput method for character race
+	String race = new InputAndConfirm.getInput(enterRace);
+	// Confirm user input for character race
+	new getConfirmation(correctRace, yourRace);
     }
 }
 
 // Define main class
 public static void main(String[] args) {
+	
 // Get and confirm character name
 String charName = new createCharacter.getName();
 // This field is still in progress
 String charRace = new createCharacter.getRace();
+	
 }
 
 
