@@ -23,6 +23,8 @@ public class InputAndConfirm {
     public static String getInput(String pleaseEnter) {
 	// Create new Scanner object // 'System.in'
         Scanner scanner = new Scanner(System.in);
+	// Print your message that prompts the user
+	System.out.println(pleaseEnter);
 	// This string will store the user input, which we receive with scanner
 	String input = scanner.nextLine();
 	return input;
@@ -32,8 +34,6 @@ public class InputAndConfirm {
     public static boolean getConfirmation(String isCorrect, String okay) {
         // Create new Scanner object // 'System.in' 
         Scanner scanner = new Scanner(System.in);
-	// This string that will store the user's answer
-	//String yesOrNo;
         // Print your message that prompts the user
 	System.out.println(isCorrect + " [Y/n] ");
 	// Read user input and assign to variable // trim() excises extraneous input text
