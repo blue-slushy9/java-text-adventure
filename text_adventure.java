@@ -3,8 +3,12 @@ import java.util.Scanner;
 
 // Create class for confirming user input
 public class Confirm {
-    // We will use two strings for confirming user input
+    // We will use three strings for confirming user input
+    // "Please enter blah blah"
+    private String pleaseEnter;
+    // "You have entered blah blah, is this correct?"
     private String isCorrect;
+    // "Okay, you have entered blah blah"
     private String okay;
     
     // Define constructor
