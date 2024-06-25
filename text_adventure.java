@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 // Create class for confirming user input
-public class Confirm {
+public class InputAndConfirm {
     // We will use three strings for confirming user input
     // "Please enter blah blah"
     private String pleaseEnter;
@@ -12,14 +12,15 @@ public class Confirm {
     private String okay;
     
     // Define constructor
-    public Confirm(String isCorrect, String okay) {
+    public InputAndConfirm(String pleaseEnter, String isCorrect, String okay) {
         // Using 'this' ensures the variables/fields will be specific to the object instance
+	this.pleaseEnter = pleaseEnter;
 	this.isCorrect = isCorrect;
 	this.okay = okay;
     }
 	
     // Define method
-    public static boolean getConfirmation(String isCorrect, String okay) {
+    public static boolean getInputAndConfirm(String isCorrect, String okay) {
         // Create new Scanner object // 'System.in' 
         Scanner scanner = new Scanner(System.in);
 	// This string that will store the user's answer
@@ -35,7 +36,7 @@ public class Confirm {
 	} // Else, if the user entered 'N' or 'n'...
 	else if (answer.equalsIgnoreCase("n")) {
 	    // Call function recursively until user enters correct string
-	    getConfirmation(String isCorrect, String okay);
+	    getConfirmation(pleaseEnter, isCorrect, okay);
 	}
     }
 	    
@@ -43,7 +44,8 @@ public class Confirm {
 
 // Contains methods and attributes pertaining to character traits
 public class CreateCharacter {
-    // Define string that will be assigned to 'isCorrect'
+    // Define our three strings for this class
+    String pleaseEnter = "Please enter your character's name: ";
     String isCorrect = "You have entered "+name+" for your character's name, is this correct? [Y/n]";
     String okay = "Okay, your character's name will be "+name+".";
     // Define method that creates Scanner object
@@ -55,7 +57,7 @@ public class CreateCharacter {
     // Method for receiving character name from user
     public String getName() {
         // Unlike 'println', 'print' leaves cursor on same line
-        System.out.print("Please enter your character's name: ");
+        
         // 'nextLine()' 
         String name = scanner.nextLine();
 	
