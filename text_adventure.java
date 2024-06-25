@@ -57,21 +57,23 @@ public class InputAndConfirm {
 
 // Contains methods and attributes pertaining to character traits
 public class CreateCharacter {
-    // Define our three strings for this class
-    String enterName = "Please enter your character's name: ";
-    String correctName = "You have entered "+name+" for your character's name, is this correct?";
-    String yourName = "Okay, your character's name will be "+name+".";
-    
     // Method for receiving character name from user
     public String getName() {
-        String name = new InputAndConfirm.getInput(enterName);
+	// Define our three strings for this method
+	String enterName = "Please enter your character's name: ";
+	String correctName = "You have entered "+name+" for your character's name, is this correct?";
+	String yourName = "Okay, your character's name will be "+name+".";
+        // Create instance of InputAndConfirm class, call getInput method for character name
+	String name = new InputAndConfirm.getInput(enterName);
         // Confirm user input for character name
 	new getConfirmation(correctName, yourName);
         return name
     }
     // Method for receiving character race from user
     public String getRace() {
-        //
+        String enterRace = "Please enter your character's race: ";
+	String correctName = "You have entered "+race+" for your character's race, is this correct?";
+	String yourName = "Okay, your character's race will be "+race+".";
 	String race = new InputAndConfirm
     }
 }
