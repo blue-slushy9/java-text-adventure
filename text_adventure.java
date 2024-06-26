@@ -93,13 +93,21 @@ public class CreateCharacter {
 	String[] races = {"Human", "Elf", "Dwarf", "Troll", "Halfling"};
 	// Define the three standard strings for taking and confirming user input
         String enterRace = "Please enter your character's race: ";
-	String correctName = "You have entered "+race+" for your character's race, is this correct?";
-	String yourName = "Okay, your character's race will be "+race+".";
-	    
+	String correctRace = "You have entered "+race+" for your character's race, is this correct?";
+	String yourRace = "Okay, your character's race will be "+race+".";
+
+	// Print the races array to the terminal so user can see what options are available
+	System.out.println("These are your options for character race: "+races+);
 	// Create instance of InputAndConfirm class, call getInput method for character race
 	String race = new InputAndConfirm.getInput(enterRace);
-	// Method for verifying whether user input is a valid race
-	//public static boolean validRace(String[] array, )
+	// Method for verifying whether user input is a valid race based on our array
+	boolean valid = new InputAndConfirm.isInArray(races, race);
+	    if (valid == true) {
+	        // Confirm user input for character race
+	        new getConfirmation(correctRace, yourRace);
+	    } else if (valid == false) {
+	        
+	    }
 		
 	// Confirm user input for character race
 	new getConfirmation(correctRace, yourRace);
