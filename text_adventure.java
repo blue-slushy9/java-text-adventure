@@ -60,10 +60,12 @@ public class InputAndConfirm {
         for (String element : array) {
 	    if (element.equals(userInput)) {
 	        return true;
-	    } else if (!element.equals(userInput)) {
-	        return false;
 	    }
 	}
+	// False goes after the for loop because we want to finish iterating
+	// over the entire thing before returning false, since return stops
+	// the iteration
+	return false;
     }
 	    
 }
