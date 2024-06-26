@@ -96,8 +96,17 @@ public class CreateCharacter {
 	String correctRace = "You have entered "+race+" for your character's race, is this correct?";
 	String yourRace = "Okay, your character's race will be "+race+".";
 
-	// Print the races array to the terminal so user can see what options are available
-	System.out.println("These are your options for character race: "+races+);
+	// Print the races array to the terminal so user can see what options are available;
+	private String printRaces(String[] racesArray) {
+	    System.out.println("These are the races you can choose for your character:");
+	    // We use a for loop to print one race per line, to make it more legible
+	    for (String race : races) {
+	        System.out.println(race);
+	    }
+	}
+
+	// Call the printRaces() method to first print list of character races to terminal
+	printRaces(races);
 	// Create instance of InputAndConfirm class, call getInput method for character race
 	String race = new InputAndConfirm.getInput(enterRace);
 	// Method for verifying whether user input is a valid race based on our array
@@ -106,7 +115,9 @@ public class CreateCharacter {
 	        // Confirm user input for character race
 	        new getConfirmation(correctRace, yourRace);
 	    } else if (valid == false) {
-	        
+	        System.out.println("Sorry, that is not a valid selection. Please enter one of the following options:");
+		printRaces(races);
+		boolean valid
 	    }
 		
 	// Confirm user input for character race
