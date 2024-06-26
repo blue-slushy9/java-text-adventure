@@ -53,6 +53,18 @@ public class InputAndConfirm {
 	    getConfirmation(isCorrect, okay);
 	}
     }
+
+    // Method for verifying user input against an array
+    public static boolean isInArray(String[] array, String userInput) {
+	// for each element in the array
+        for (String element : array) {
+	    if (element.equals(userInput)) {
+	        return true;
+	    } else if (!element.equals(userInput)) {
+	        return false;
+	    }
+	}
+    }
 	    
 }
 
@@ -74,11 +86,19 @@ public class CreateCharacter {
 
     // Method for receiving character race from user
     public String getRace() {
+	    
+	// Define array of valid character races
+	String[] races = {"Human", "Elf", "Dwarf", "Troll", "Halfling"};
+	// Define the three standard strings for taking and confirming user input
         String enterRace = "Please enter your character's race: ";
 	String correctName = "You have entered "+race+" for your character's race, is this correct?";
 	String yourName = "Okay, your character's race will be "+race+".";
+	    
 	// Create instance of InputAndConfirm class, call getInput method for character race
 	String race = new InputAndConfirm.getInput(enterRace);
+	// Method for verifying whether user input is a valid race
+	//public static boolean validRace(String[] array, )
+		
 	// Confirm user input for character race
 	new getConfirmation(correctRace, yourRace);
     }
