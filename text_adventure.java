@@ -63,7 +63,7 @@ public class InputAndConfirm {
 	    }
 	}
 	// False goes after the for loop because we want to finish iterating
-	// over the entire thing before returning false, since return stops
+	// over the entire array before returning false, since return stops
 	// the iteration
 	return false;
     }
@@ -96,7 +96,8 @@ public class CreateCharacter {
 	String correctRace = "You have entered "+race+" for your character's race, is this correct?";
 	String yourRace = "Okay, your character's race will be "+race+".";
 
-	// Print the races array to the terminal so user can see what options are available;
+	// Define method that prints the races array to the terminal so user can see
+	// what options are available
 	private String printRaces(String[] racesArray) {
 	    System.out.println("These are the races you can choose for your character:");
 	    // We use a for loop to print one race per line, to make it more legible
@@ -109,19 +110,22 @@ public class CreateCharacter {
 	printRaces(races);
 	// Create instance of InputAndConfirm class, call getInput method for character race
 	String race = new InputAndConfirm.getInput(enterRace);
-	// Method for verifying whether user input is a valid race based on our array
+	// Create new instance of method for verifying whether user input is a valid 
+	// race based on our array
 	boolean valid = new InputAndConfirm.isInArray(races, race);
 	    if (valid == true) {
 	        // Confirm user input for character race
 	        new getConfirmation(correctRace, yourRace);
 	    } else if (valid == false) {
-	        System.out.println("Sorry, that is not a valid selection. Please enter one of the following options:");
-		printRaces(races);
-		boolean valid
+	        System.out.println("Sorry, that is not a valid selection. Please enter" 
+				 + " one of the following options:"); // '+' is the line continuation
+		printRaces(races);                                    // operator
+		// Call function recursively until user enters valid input
+		boolean valid = new InputAndConfirm.isInArray(races, race);
 	    }
 		
 	// Confirm user input for character race
-	new getConfirmation(correctRace, yourRace);
+	//new getConfirmation(correctRace, yourRace);
     }
 }
 
