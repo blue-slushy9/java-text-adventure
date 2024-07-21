@@ -92,9 +92,10 @@ public class CreateCharacter {
 	// Define array of valid character races
 	String[] races = {"Human", "Elf", "Dwarf", "Troll", "Halfling"};
 	// Define the three standard strings for taking and confirming user input
-        String enterRace = "Please enter your character's race: ";
+    String enterRace = "Please enter your character's race: ";
 	String correctRace = "You have entered "+race+" for your character's race, is this correct?";
 	String yourRace = "Okay, your character's race will be "+race+".";
+	}
 
 	// Define method that prints the races array to the terminal so user can see
 	// what options are available
@@ -107,7 +108,8 @@ public class CreateCharacter {
 	}
 
 	// Call the printRaces() method to first print list of character races to terminal
-	printRaces(races);
+	//printRaces(races); // Trying to call the method this way raised an error
+
 	// Create instance of InputAndConfirm class, call getInput method for character race
 	String race = new InputAndConfirm.getInput(enterRace);
 	// Create new instance of method for verifying whether user input is a valid 
